@@ -20,6 +20,7 @@ library(Seurat)
 library(ggplot2)
 library(viridis)
 library(dplyr)
+select <- dplyr::select
 
 cross_tool_folder <- file.path(results_folder, "cross_tool_analysis")
 dir.create(cross_tool_folder, recursive = TRUE, showWarnings = FALSE)
@@ -48,6 +49,7 @@ if (nrow(top_consensus_pairs) == 0) {
   cat("No ligand receptor pairs were detected by at least two tools.\n")
 } else {
   seurat_interest <- load_pipeline_seurat()
+  seurat_interest <- seurat_interest[, !is.na(seurat_interest@meta.data[[celltype_column]]) & nzchar(trimws(as.character(seurat_interest@meta.data[[celltype_column]])))]
   seurat_interest <- JoinLayers(seurat_interest, assay = "RNA")
   split_complex_genes <- function(gene_string) unlist(strsplit(gene_string, "_"))
   ligand_genes <- unique(unlist(sapply(top_consensus_pairs$ligand, split_complex_genes)))
@@ -55,6 +57,7 @@ if (nrow(top_consensus_pairs) == 0) {
   seurat_gene_names <- rownames(seurat_interest)
   ligands_to_plot <- seurat_gene_names[toupper(seurat_gene_names) %in% toupper(ligand_genes)]
   receptors_to_plot <- seurat_gene_names[toupper(seurat_gene_names) %in% toupper(receptor_genes)]
+  seurat_interest@meta.data[[celltype_column]] <- droplevels(factor(seurat_interest@meta.data[[celltype_column]]))
   Idents(seurat_interest) <- celltype_column
   dotplot_args <- list(object = seurat_interest, group.by = celltype_column, cols = "RdYlBu")
   if (!is.null(condition_column)) dotplot_args$split.by <- condition_column
