@@ -12,11 +12,12 @@ This submission uses the anonymous author identifier **B288659**. The placeholde
 - Finds interactions supported by multiple tools.
 - Performs condition-change analysis when exactly two conditions are present.
 
-## Installation from a local folder
+## Installation from GitHub
 
 ```r
-install.packages("devtools")
-devtools::install("path/to/DONA_R_package")
+install.packages("remotes")
+remotes::install_github("B288659-2025/DONA")
+library(DONA)
 ```
 
 ## Start a new analysis
