@@ -4,8 +4,8 @@ template:
 reference:
 - title: Main workflow
   contents:
-  - lrip_copy_pipeline
-  - lrip_pipeline_path
-  - lrip_run
-  - lrip_run_cellphonedb
-  - lrip_run_downstream
+  - dona_copy_pipeline
+  - dona_pipeline_path
+  - dona_run
+  - dona_run_cellphonedb
+  - dona_run_downstream
