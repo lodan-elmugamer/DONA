@@ -2,7 +2,7 @@
 
 **DONA** is a ligand-receptor interaction pipeline for annotated Seurat objects. It brings together CellChat, CellPhoneDB, LIANA and SingleCellSignalR, then produces tool-specific rankings, plots, expression checks and cross-tool consensus results.
 
-This submission uses the anonymous author identifier **B288659**. The placeholder email in `DESCRIPTION` is deliberately non-functional and should be replaced before public release.
+This submission uses the anonymous author identifier **B288659**. The placeholder email in `DESCRIPTION` will be replaced before public release.
 
 ## What it does
 
@@ -51,8 +51,5 @@ dona_run_downstream("my_DONA_analysis")
 
 ## Important dependency note
 
-The package wrapper itself is lightweight, but the analysis scripts require the relevant scientific packages and CellPhoneDB Python environment. These must be installed separately because some are distributed through Bioconductor, GitHub or Python rather than CRAN.
+The analysis scripts require the relevant packages and CellPhoneDB Python environment. These must be installed separately because some are distributed through Bioconductor, GitHub or Python rather than CRAN.
 
-## Anonymous grading
-
-Before public release, replace `B288659` and `redacted@example.invalid` in `DESCRIPTION`, `LICENSE` and `CITATION.cff` with the official author details.
