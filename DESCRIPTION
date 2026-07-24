@@ -2,7 +2,7 @@ Package: DONA
 Type: Package
 Title: Ligand-Receptor Interaction Pipeline
 Version: 0.1.0
-Authors@R: person("B288659", role = c("aut", "cre"), email = "redacted@example.invalid")
+Authors@R: person("B288659", role = c("aut", "cre"), email = "B288659@ed.ac.uk")
 Description: Provides a reusable workflow for running and comparing ligand-receptor
     interaction analyses from annotated Seurat objects. The included pipeline supports
     CellChat, CellPhoneDB, LIANA and SingleCellSignalR, per-condition ranking,
