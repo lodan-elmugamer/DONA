@@ -50,7 +50,7 @@ run_liana_one_object <- function(seurat_object, output_name, output_folder) {
 
   DefaultAssay(seurat_object) <- "RNA"
 
-  seurat_object <- NormalizeData(seurat_object, assay = "RNA",>
+  seurat_object <- NormalizeData(seurat_object, assay = "RNA")
 
   # use analysis groups instead of numeric Seurat clusters
   Idents(seurat_object) <- celltype_column
@@ -100,6 +100,7 @@ run_liana_one_object <- function(seurat_object, output_name, output_folder) {
   # return significant and full results
   return(list(all = liana_aggregated, significant = liana_results_sig))
 }
+
 
 # run LIANA for every condition
 liana_results <- list()
