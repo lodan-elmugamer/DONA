@@ -58,19 +58,24 @@ run_cellchat_one_object <- function(state, seurat_obj, output_name, output_folde
   data.input <- LayerData(seurat_obj, assay = "RNA", layer = "data")
 
   # get metadata in the same order as the expression matrix
-  meta <- seurat_obj@meta.data[match(colnames(data.input), rownames(seurat_obj@meta.data)), ]
+  meta <- seurat_obj@meta.data
+  meta <- meta[colnames(data.input), , drop = FALSE]
 
-  # set metadata row names to match expression matrix column names
+  labels <- as.character(meta[[celltype_column]])
+
+  keep <- !is.na(labels) & labels != ""
+
+  data.input <- data.input[, keep, drop = FALSE]
+  meta <- meta[keep, , drop = FALSE]
+
+  meta[[celltype_column]] <- droplevels(factor(meta[[celltype_column]]))
+
   rownames(meta) <- colnames(data.input)
-
-  # check count matrix and metadata match
-  print(ncol(data.input))
-  print(nrow(meta))
-  print(all(colnames(data.input) == rownames(meta)))
   
   # create CellChat object from Seurat object
   cellchat <- createCellChat(object = data.input, meta = meta, group.by = celltype_column)
-  
+  cellchat@idents <- droplevels(cellchat@idents)  
+
   # use human CellChat database
   CellChatDB <- CellChatDB.human
   
