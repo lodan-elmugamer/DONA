@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "Please cite LRIP if you use it."
-title: "LRIP: Ligand-Receptor Interaction Pipeline"
+message: "Please cite DONA if you use it."
+title: "DONA: Decoding Overlapping Networks for Ligand–Receptor Analysis"
 version: 0.1.0
 authors:
   - name: "B288659"
