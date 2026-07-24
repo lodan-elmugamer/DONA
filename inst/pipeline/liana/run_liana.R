@@ -47,7 +47,11 @@ condition_info <- get_pipeline_conditions(seurat_interest)
 # function to run LIANA on one Seurat object
 run_liana_one_object <- function(seurat_object, output_name, output_folder) {  
   cat("\nRunning LIANA for:", output_name, "\n")
-  
+
+  DefaultAssay(seurat_object) <- "RNA"
+
+  seurat_object <- NormalizeData(seurat_object, assay = "RNA",>
+
   # use analysis groups instead of numeric Seurat clusters
   Idents(seurat_object) <- celltype_column
   
