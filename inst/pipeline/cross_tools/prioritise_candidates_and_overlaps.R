@@ -19,6 +19,7 @@ check_pipeline_config()
 
 # load packages
 library(dplyr)
+select <- dplyr::select
 
 # set folders
 comparison_folder <- file.path(results_folder, "comparison")
@@ -39,8 +40,7 @@ expression_results <- expression_results %>% filter(!is.na(ligand), !is.na(recep
 candidate_expression_summary <- expression_results %>% group_by(method, condition, change_category, source, target, ligand, receptor) %>% summarise(required_gene_count = n_distinct(paste(gene_role, gene)), minimum_percent_expressing = ifelse(all(is.na(percent_expressing)), NA_real_, min(percent_expressing, na.rm = TRUE)), mean_percent_expressing = ifelse(all(is.na(percent_expressing)), NA_real_, mean(percent_expressing, na.rm = TRUE)), minimum_mean_expression = ifelse(all(is.na(mean_expression)), NA_real_, min(mean_expression, na.rm = TRUE)), mean_expression = ifelse(all(is.na(mean_expression)), NA_real_, mean(mean_expression, na.rm = TRUE)), .groups = "drop")
 
 # use the long ranked table so this works with one or more conditions
-candidate_scores <- read.csv(file.path(comparison_folder, "all_tools_ranked_interactions_long.csv"), stringsAsFactors = FALSE, check.names = FALSE) %>% mutate(ranking_value = percentile)
-
+candidate_scores <- read.csv(file.path(comparison_folder, "all_tools_ranked_interactions_long.csv"), stringsAsFactors = FALSE, check.names = FALSE) %>% dplyr::select(-dplyr::any_of("change_category")) %>% dplyr::mutate(ranking_value = percentile)
 if ("condition" %in% colnames(selected_candidates)) {
   selected_keys <- selected_candidates %>% select(method, condition, change_category, source, target, ligand, receptor) %>% distinct()
   candidate_scores <- candidate_scores %>% inner_join(selected_keys, by = c("method", "condition", "source", "target", "ligand", "receptor"))
