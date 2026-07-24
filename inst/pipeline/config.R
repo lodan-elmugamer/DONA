@@ -9,8 +9,7 @@
 seurat_file <- "path/to/your_seurat_object.rds"
 
 # main output folder
-output_folder <- "results"
-results_folder <- file.path(output_folder, "ligand_receptor")
+results_folder <- "path/to/results/folder"
 
 # metadata columns
 celltype_column <- "analysis_group_fixed"
@@ -49,7 +48,7 @@ check_pipeline_config <- function(require_seurat = FALSE) {
   if (require_seurat && (!file.exists(seurat_file) || dir.exists(seurat_file))) {
     stop("Update seurat_file in config.R so that it points to a valid Seurat RDS file.")
   }
-  if (!nzchar(output_folder)) stop("output_folder cannot be empty.")
+  if (!nzchar(results_folder)) stop("results_folder cannot be empty.")
   if (!nzchar(celltype_column)) stop("celltype_column cannot be empty.")
 }
 
