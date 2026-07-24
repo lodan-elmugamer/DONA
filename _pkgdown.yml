@@ -1,0 +1,11 @@
+url: ~
+template:
+  bootstrap: 5
+reference:
+- title: Main workflow
+  contents:
+  - lrip_copy_pipeline
+  - lrip_pipeline_path
+  - lrip_run
+  - lrip_run_cellphonedb
+  - lrip_run_downstream

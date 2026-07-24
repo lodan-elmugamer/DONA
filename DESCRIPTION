@@ -1,0 +1,24 @@
+Package: DONA
+Type: Package
+Title: Ligand-Receptor Interaction Pipeline
+Version: 0.1.0
+Authors@R: person("B288659", role = c("aut", "cre"), email = "redacted@example.invalid")
+Description: Provides a reusable workflow for running and comparing ligand-receptor
+    interaction analyses from annotated Seurat objects. The included pipeline supports
+    CellChat, CellPhoneDB, LIANA and SingleCellSignalR, per-condition ranking,
+    plotting, expression checks and cross-tool consensus analysis.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.2.0)
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    pkgdown,
+    devtools,
+    remotes
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0

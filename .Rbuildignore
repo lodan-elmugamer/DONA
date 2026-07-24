@@ -1,0 +1,4 @@
+^\.github$
+^_pkgdown\.yml$
+^CITATION\.cff$
+^PACKAGE_SUBMISSION_GUIDE\.md$

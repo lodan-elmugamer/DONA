@@ -1,0 +1,45 @@
+---
+title: "Getting started with DONA"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with DONA}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, eval=FALSE}
+library(DONA)
+```
+
+## 1. Copy the pipeline
+
+```{r, eval=FALSE}
+dona_copy_pipeline("my_DONA_analysis")
+```
+
+This creates an editable analysis folder. Open `config.R` and enter the Seurat file, cell-type column, condition column and output folder.
+
+## 2. Run the R inference methods
+
+```{r, eval=FALSE}
+dona_run("my_DONA_analysis")
+```
+
+## 3. Run CellPhoneDB
+
+CellPhoneDB uses Python, so its virtual environment and database file must be configured first.
+
+```{r, eval=FALSE}
+dona_run_cellphonedb("my_DONA_analysis", env = c(
+  VENV_ACTIVATE = "/path/to/venv/bin/activate",
+  CPDB_ZIP = "/path/to/cellphonedb.zip"
+))
+```
+
+## 4. Run downstream results
+
+```{r, eval=FALSE}
+dona_run_downstream("my_DONA_analysis")
+```
+
+For one condition, DONA ranks and compares the tools within that condition. For two conditions, it also calculates changes between conditions. For more than two conditions, it creates results for each condition and skips automatic pairwise change analysis.
