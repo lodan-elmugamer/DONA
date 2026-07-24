@@ -9,8 +9,8 @@
 # ============================================================
 
 PROJECT_FOLDER="${PROJECT_FOLDER:-$PWD}"
-RESULTS_FOLDER="${RESULTS_FOLDER:-$PROJECT_FOLDER/results/ligand_receptor/cellphonedb}"
-CPDB_ZIP="${CPDB_ZIP:-$PROJECT_FOLDER/resources/cellphonedb/cellphonedb.zip}"
+RESULTS_FOLDER="${RESULTS_FOLDER:-$PROJECT_FOLDER/results/cellphonedb}"
+CPDB_ZIP="${CPDB_ZIP:-$PROJECT_FOLDER/resources/cellphonedb.zip}"
 VENV_ACTIVATE="${VENV_ACTIVATE:-$PROJECT_FOLDER/cellphonedb/venv/bin/activate}"
 THREADS="${THREADS:-32}"
 
