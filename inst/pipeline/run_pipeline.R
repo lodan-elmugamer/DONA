@@ -26,4 +26,4 @@ run_r_script("liana/run_liana.R")
 run_r_script("singlecellsignalr/run_singlecellsignalr.R")
 
 cat("\nCellChat, LIANA and SingleCellSignalR are complete.\n")
-cat("Run CellPhoneDB with bash cellphonedb/run_cellphonedb.sh before running downstream_results.R.\n")
+cat("Create virtual environment inside CellPhoneDb folder and run with bash ./run_cellphonedb.sh before running downstream_results.R.\n")
