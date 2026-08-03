@@ -50,7 +50,3 @@ Finally run ranking, plotting and consensus analysis:
 dona_run_downstream("my_DONA_analysis")
 ```
 
-## Important dependency note
-
-The analysis scripts require the relevant packages and CellPhoneDB Python environment. These must be installed separately because some are distributed through Bioconductor, GitHub or Python rather than CRAN.
-
