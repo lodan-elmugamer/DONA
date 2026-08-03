@@ -1,13 +1,13 @@
 # DONA - Decoding Overlapping Networks for Ligand–Receptor Analysis
 
-**DONA** is a ligand-receptor interaction pipeline for annotated single-cell RNA-seq Seurat objects. It brings together CellChat, CellPhoneDB, LIANA and SingleCellSignalR, then produces tool-specific rankings, plots, expression checks and cross-tool consensus results.
+**DONA** is a ligand-receptor interaction pipeline for annotated single-cell RNA-seq Seurat objects. It uses CellChat, CellPhoneDB, LIANA and SingleCellSignalR, then produces tool-specific rankings, plots, expression checks and cross-tool consensus results.
 
 The B number **B288659** will be used as the author identifier for the time being.
 
 ## What it does
 
 - Accepts one or more biological conditions.
-- Runs each supported interaction method separately.
+- Runs each interaction method separately.
 - Ranks and plots interactions within each condition.
 - Finds interactions supported by multiple tools.
 - Performs condition-change analysis when exactly two conditions are present.
