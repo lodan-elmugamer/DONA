@@ -2,8 +2,6 @@
 
 **DONA** is a ligand-receptor interaction pipeline for annotated single-cell RNA-seq Seurat objects. It uses CellChat, CellPhoneDB, LIANA and SingleCellSignalR, then produces tool-specific rankings, plots, expression checks and cross-tool consensus results.
 
-The B number **B288659** will be used as the author identifier for the time being.
-
 ## What it does
 
 - Accepts one or more biological conditions.
@@ -50,3 +48,4 @@ Finally run ranking, plotting and consensus analysis:
 dona_run_downstream("my_DONA_analysis")
 ```
 
+Submitted by: B288659
