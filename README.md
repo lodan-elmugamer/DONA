@@ -14,7 +14,7 @@
 
 ```r
 install.packages("remotes")
-remotes::install_github("Lodanelmugamer/DONA")
+remotes::install_github("lodan-elmugamer/DONA")
 library(DONA)
 ```
 
