@@ -3,6 +3,6 @@ message: "Please cite DONA if you use it."
 title: "DONA: Decoding Overlapping Networks for Ligand–Receptor Analysis"
 version: 0.1.0
 authors:
-  - name: "B288659"
+  - name: "LodanElmugamer"
 license: MIT
 date-released: 2026-07-24
