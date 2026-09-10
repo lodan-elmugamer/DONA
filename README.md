@@ -48,4 +48,3 @@ Finally run ranking, plotting and consensus analysis:
 dona_run_downstream("my_DONA_analysis")
 ```
 
-Submitted by: B288659
